@@ -1,11 +1,8 @@
 {{ define "main" }}
   <article class="Home-hero">
     <div class="Home-intro">
+      <h1>Kian Hong Tan</h1>
       {{ .Content }}
-      <p class="Home-actions">
-        <a class="Home-action" href="{{ relref . "/projects" }}">View projects</a>
-        <a class="Home-action Home-action--quiet" href="{{ relref . "/writing" }}">Read writing</a>
-      </p>
     </div>
     <div class="Home-portrait">
       {{ with resources.Get "images/profile/kian-hong-tan.jpg" }}
@@ -18,21 +15,21 @@
     </div>
   </article>
 
-  <section class="Home-section" aria-labelledby="explore-heading">
-    <h2 id="explore-heading">Explore</h2>
+  <section class="Home-section" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
     <div class="Home-grid">
-      <a class="Home-card" href="{{ relref . "/about" }}">
-        <strong>About</strong>
-        <span>Background, current interests, and a short professional profile.</span>
-      </a>
-      <a class="Home-card" href="{{ relref . "/projects" }}">
-        <strong>Projects</strong>
-        <span>Case studies in software, research, and experimentation.</span>
-      </a>
-      <a class="Home-card" href="{{ relref . "/experience" }}">
-        <strong>Experience</strong>
-        <span>Roles and formative work, with narrative context.</span>
-      </a>
+      <article class="Home-card Home-card--placeholder">
+        <strong>Project one</strong>
+        <span>Project case study coming soon.</span>
+      </article>
+      <article class="Home-card Home-card--placeholder">
+        <strong>Project two</strong>
+        <span>Project case study coming soon.</span>
+      </article>
+      <article class="Home-card Home-card--placeholder">
+        <strong>Project three</strong>
+        <span>Project case study coming soon.</span>
+      </article>
     </div>
   </section>
 

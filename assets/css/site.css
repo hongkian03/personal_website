@@ -51,28 +51,6 @@
   text-align: center;
 }
 
-.Home-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
-}
-
-.Home-action {
-  background: var(--site-ink);
-  border: 0.1rem solid var(--site-ink);
-  border-radius: 0.25rem;
-  color: white;
-  font-weight: 700;
-  padding: 0.55rem 0.85rem;
-  text-decoration: none;
-}
-
-.Home-action--quiet {
-  background: transparent;
-  color: var(--site-ink);
-}
-
 .Home-section {
   border-top: 0.1rem solid var(--site-border);
   margin-top: 2.25rem;
@@ -101,18 +79,16 @@
   background: var(--site-surface);
   border: 0.1rem solid var(--site-border);
   border-radius: 0.25rem;
-  color: inherit;
+  color: var(--site-ink);
   display: grid;
   gap: 0.35rem;
+  min-height: 5.5rem;
   padding: 1rem;
   text-decoration: none;
 }
 
-.Home-card:hover,
-.Home-card:focus-visible {
-  border-color: var(--site-ink);
-  outline: 0.15rem solid var(--site-ink);
-  outline-offset: 0.1rem;
+.Home-card--placeholder span {
+  color: #365c54;
 }
 
 .Home-list {
