@@ -4,6 +4,12 @@
   --site-border: #c7d8d4;
 }
 
+.Banner-heading {
+  align-items: center;
+  display: flex;
+  line-height: inherit;
+}
+
 .Home-hero {
   align-items: center;
   display: grid;
