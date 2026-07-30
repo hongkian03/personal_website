@@ -4,10 +4,10 @@
       <li class="Banner-item Banner-item--title">
         {{ if not .Title | and .IsHome }}
           <h1 class="Banner-heading">
-            <span class="Banner-link">{{ site.Title }}</span>
+            <a class="Banner-link u-clickable" href="{{ relLangURL nil }}">{{ site.Title }}</a>
           </h1>
         {{ else }}
-          <span class="Banner-link">{{ site.Title }}</span>
+          <a class="Banner-link u-clickable" href="{{ relLangURL nil }}">{{ site.Title }}</a>
         {{ end }}
       </li>
       {{ range site.Menus.main }}
