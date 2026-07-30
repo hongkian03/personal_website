@@ -6,7 +6,8 @@
     </div>
     <div class="Home-portrait">
       {{ with resources.Get "images/profile/kian-hong-tan.jpg" }}
-        <img src="{{ .RelPermalink }}" alt="Portrait of Kian Hong Tan" width="720" height="900">
+        {{ $portrait := .Fill "720x900 Center" }}
+        <img src="{{ $portrait.RelPermalink }}" alt="Portrait of Kian Hong Tan" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}">
       {{ else }}
         <div class="Home-portraitPlaceholder" role="img" aria-label="Portrait of Kian Hong Tan will appear here">
           <span>Portrait forthcoming</span>
