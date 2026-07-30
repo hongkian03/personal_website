@@ -1,0 +1,118 @@
+:root {
+  --site-ink: #17302d;
+  --site-surface: #f4f8f6;
+  --site-border: #c7d8d4;
+}
+
+.Home-hero {
+  padding: 3.25rem 0 2rem;
+}
+
+.Home-hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin: 0 0 1.25rem;
+}
+
+.Home-hero p {
+  font-size: 1.2rem;
+  max-width: 42rem;
+}
+
+.Home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.Home-action {
+  background: var(--site-ink);
+  border: 0.1rem solid var(--site-ink);
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: 700;
+  padding: 0.55rem 0.85rem;
+  text-decoration: none;
+}
+
+.Home-action--quiet {
+  background: transparent;
+  color: var(--site-ink);
+}
+
+.Home-section {
+  border-top: 0.1rem solid var(--site-border);
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+}
+
+.Home-sectionHeading {
+  align-items: baseline;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.Home-sectionHeading h2,
+.Home-section > h2 {
+  margin-top: 0;
+}
+
+.Home-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.Home-card {
+  background: var(--site-surface);
+  border: 0.1rem solid var(--site-border);
+  border-radius: 0.25rem;
+  color: inherit;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.Home-card:hover,
+.Home-card:focus-visible {
+  border-color: var(--site-ink);
+  outline: 0.15rem solid var(--site-ink);
+  outline-offset: 0.1rem;
+}
+
+.Home-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Home-list li {
+  align-items: baseline;
+  border-top: 0.1rem solid var(--site-border);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.Home-list time {
+  color: #4d625f;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 32rem) {
+  .Home-hero {
+    padding-top: 2.25rem;
+  }
+
+  .Home-list li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}

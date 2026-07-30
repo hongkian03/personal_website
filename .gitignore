@@ -1,0 +1,13 @@
+# Private AI-agent instructions and planning documents
+/AGENTS.md
+/agents/
+
+# Hugo build and local cache artifacts
+/public/
+/resources/
+.hugo_build.lock
+
+# Local editor and operating-system files
+.DS_Store
+.idea/
+.vscode/

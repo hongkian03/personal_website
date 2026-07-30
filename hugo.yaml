@@ -1,0 +1,55 @@
+baseURL: https://example.github.io/
+title: Kian Hong
+languageCode: en-US
+theme: hugo-flex
+
+params:
+  description: "Developer, researcher-in-training, and writer."
+  color: "#1f5f5b"
+  width: 48rem
+  divider: "\\2500\\2500"
+  footer: "© Kian Hong. Built with Hugo."
+  rss: "Subscribe to new writing with your preferred feed reader."
+  favicon: false
+  noClasses: false
+  headingoffset: 0
+  linkicons: hover
+  summaries: true
+  schema: false
+  opengraph: false
+  twittercards: false
+  mainSections:
+    - writing
+  css:
+    - css/site.css
+
+menu:
+  main:
+    - name: About
+      pageRef: /about
+      weight: 1
+    - name: Projects
+      pageRef: /projects
+      weight: 2
+    - name: Experience
+      pageRef: /experience
+      weight: 3
+    - name: Writing
+      pageRef: /writing
+      weight: 4
+    - name: RSS
+      pageRef: /
+      weight: 5
+      params:
+        format: rss
+
+taxonomies:
+  tag: tags
+
+outputFormats:
+  rss:
+    mediaType: application/rss+xml
+    baseName: feed
+
+pagination:
+  pagerSize: 10

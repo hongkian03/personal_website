@@ -1,0 +1,47 @@
+{{ define "main" }}
+  <article class="Home-hero">
+    {{ .Content }}
+    <p class="Home-actions">
+      <a class="Home-action" href="{{ relref . "/projects" }}">View projects</a>
+      <a class="Home-action Home-action--quiet" href="{{ relref . "/writing" }}">Read writing</a>
+    </p>
+  </article>
+
+  <section class="Home-section" aria-labelledby="explore-heading">
+    <h2 id="explore-heading">Explore</h2>
+    <div class="Home-grid">
+      <a class="Home-card" href="{{ relref . "/about" }}">
+        <strong>About</strong>
+        <span>Background, current interests, and a short professional profile.</span>
+      </a>
+      <a class="Home-card" href="{{ relref . "/projects" }}">
+        <strong>Projects</strong>
+        <span>Case studies in software, research, and experimentation.</span>
+      </a>
+      <a class="Home-card" href="{{ relref . "/experience" }}">
+        <strong>Experience</strong>
+        <span>Roles and formative work, with narrative context.</span>
+      </a>
+    </div>
+  </section>
+
+  {{ $writing := where site.RegularPages "Section" "writing" }}
+  <section class="Home-section" aria-labelledby="writing-heading">
+    <div class="Home-sectionHeading">
+      <h2 id="writing-heading">Latest writing</h2>
+      <a href="{{ relref . "/writing" }}">All writing</a>
+    </div>
+    {{ with first 3 $writing }}
+      <ul class="Home-list">
+        {{ range . }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "Jan 2, 2006" }}</time>
+          </li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <p>Writing is coming soon.</p>
+    {{ end }}
+  </section>
+{{ end }}
