@@ -1,10 +1,21 @@
 {{ define "main" }}
   <article class="Home-hero">
-    {{ .Content }}
-    <p class="Home-actions">
-      <a class="Home-action" href="{{ relref . "/projects" }}">View projects</a>
-      <a class="Home-action Home-action--quiet" href="{{ relref . "/writing" }}">Read writing</a>
-    </p>
+    <div class="Home-intro">
+      {{ .Content }}
+      <p class="Home-actions">
+        <a class="Home-action" href="{{ relref . "/projects" }}">View projects</a>
+        <a class="Home-action Home-action--quiet" href="{{ relref . "/writing" }}">Read writing</a>
+      </p>
+    </div>
+    <div class="Home-portrait">
+      {{ with resources.Get "images/profile/kian-hong-tan.jpg" }}
+        <img src="{{ .RelPermalink }}" alt="Portrait of Kian Hong Tan" width="720" height="900">
+      {{ else }}
+        <div class="Home-portraitPlaceholder" role="img" aria-label="Portrait of Kian Hong Tan will appear here">
+          <span>Portrait forthcoming</span>
+        </div>
+      {{ end }}
+    </div>
   </article>
 
   <section class="Home-section" aria-labelledby="explore-heading">

@@ -1,6 +1,6 @@
 # Personal Website
 
-A fast, static personal website for Kian Hong: developer portfolio, research-facing profile, project archive, experience narrative, and opinion blog.
+A fast, static personal website for Kian Hong Tan: developer portfolio, research-facing profile, project archive, experience narrative, and opinion blog.
 
 ## Status
 

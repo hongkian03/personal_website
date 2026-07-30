@@ -5,6 +5,10 @@
 }
 
 .Home-hero {
+  align-items: center;
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
   padding: 3.25rem 0 2rem;
 }
 
@@ -18,6 +22,33 @@
 .Home-hero p {
   font-size: 1.2rem;
   max-width: 42rem;
+}
+
+.Home-portrait {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.Home-portrait img,
+.Home-portraitPlaceholder {
+  border-radius: 0.5rem;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.Home-portraitPlaceholder {
+  align-items: center;
+  background: linear-gradient(145deg, #dce9e5, #bcd0ca);
+  border: 0.1rem dashed #52756e;
+  box-sizing: border-box;
+  color: #294941;
+  display: flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
 }
 
 .Home-actions {
@@ -107,7 +138,14 @@
 
 @media (max-width: 32rem) {
   .Home-hero {
+    display: flex;
+    flex-direction: column;
     padding-top: 2.25rem;
+  }
+
+  .Home-portrait {
+    max-width: 17rem;
+    width: 100%;
   }
 
   .Home-list li {

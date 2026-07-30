@@ -1,11 +1,11 @@
 ---
 title: About
-description: "A short introduction to Kian Hong's work and interests."
+description: "A short introduction to Kian Hong Tan's work and interests."
 params:
   showdate: false
 ---
 
-I’m Kian Hong—a developer, aspiring PhD student, and writer.
+I’m Kian Hong Tan—a developer, aspiring PhD student, and writer.
 
 This page will grow into a concise profile grounded in my resume: the work I have done, the questions I am drawn to, and the directions I want to explore next.
 

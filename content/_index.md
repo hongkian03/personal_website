@@ -3,7 +3,7 @@ title: ""
 description: "Developer, researcher-in-training, and writer."
 ---
 
-# Kian Hong
+# Kian Hong Tan
 
 Developer, researcher-in-training, and writer. This is a home for selected work, previous experiences, and ideas explored in public.
 

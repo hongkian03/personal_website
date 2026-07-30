@@ -1,5 +1,5 @@
 baseURL: https://example.github.io/
-title: Kian Hong
+title: Kian Hong Tan
 languageCode: en-US
 theme: hugo-flex
 
@@ -8,7 +8,7 @@ params:
   color: "#1f5f5b"
   width: 48rem
   divider: "\\2500\\2500"
-  footer: "© Kian Hong. Built with Hugo."
+  footer: "© Kian Hong Tan. Built with Hugo."
   rss: "Subscribe to new writing with your preferred feed reader."
   favicon: false
   noClasses: false
