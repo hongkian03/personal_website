@@ -11,7 +11,7 @@
 }
 
 .Home-hero {
-  align-items: center;
+  align-items: start;
   display: grid;
   gap: 2.25rem;
   grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
@@ -31,16 +31,27 @@
 }
 
 .Home-portrait {
+  margin: 0;
+}
+
+.Home-portraitMedia {
   aspect-ratio: 4 / 5;
   overflow: hidden;
 }
 
-.Home-portrait img,
+.Home-portraitMedia img,
 .Home-portraitPlaceholder {
   border-radius: 0.5rem;
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+.Home-portrait figcaption {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 .Home-portraitPlaceholder {
@@ -134,5 +145,273 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.2rem;
+  }
+}
+
+/* Page intro used on Projects and Experience index pages */
+.Page-intro {
+  margin: 2rem 0 2.5rem;
+  max-width: 42rem;
+}
+
+.Page-intro p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Category section used on the Projects index to group projects by category */
+.Category-section {
+  margin: 0 0 2.5rem;
+}
+
+.Category-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.Category-heading {
+  border-top: 0.1rem solid var(--site-border);
+  color: var(--site-border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.25rem;
+  padding-top: 1.25rem;
+  text-transform: uppercase;
+}
+
+.Category-section:first-of-type .Category-heading {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Card grid used on Projects and Experience index pages */
+.CardGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.Card {
+  background: var(--site-surface);
+  border: 0.1rem solid var(--site-border);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.Card:hover {
+  border-color: var(--site-ink);
+  transform: translateY(-2px);
+}
+
+.Card-link {
+  color: var(--site-ink);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 1.25rem;
+  text-decoration: none;
+}
+
+.Card-header {
+  align-items: baseline;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.Card-header .Card-title {
+  flex: 1 1 auto;
+  margin: 0;
+  min-width: 0;
+}
+
+.Card-header .Card-meta {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.Card-meta {
+  color: #4d625f;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.Card-title {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.Card-subtitle {
+  color: #365c54;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.Card-description {
+  color: var(--site-ink);
+  display: -webkit-box;
+  font-size: 0.95rem;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+}
+
+.Card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0;
+}
+
+.Card-tag {
+  background: #ffffff;
+  border: 0.1rem solid var(--site-border);
+  border-radius: 0.25rem;
+  color: #365c54;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+}
+
+.Card-status {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.Card-status--featured {
+  background: #1f5f5b;
+  color: #ffffff;
+}
+
+.Card-status--active {
+  background: #e6f0ee;
+  color: #1f5f5b;
+}
+
+.Card-status--completed {
+  background: #f4f8f6;
+  color: #4d625f;
+  border: 0.1rem solid var(--site-border);
+}
+
+/* Project / experience detail pages */
+.Detail-header {
+  margin: 2rem 0 2rem;
+}
+
+.Detail-meta {
+  color: #4d625f;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.Detail-subtitle {
+  color: #ffffff;
+  font-size: 1.15rem;
+  margin: 0.5rem 0 0;
+}
+
+.Detail-section {
+  border-top: 0.1rem solid var(--site-border);
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+}
+
+.Detail-facts {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.Detail-fact {
+  background: var(--site-surface);
+  border: 0.1rem solid var(--site-border);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.Detail-factLabel {
+  color: #4d625f;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.Detail-factValue {
+  color: var(--site-ink);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.Detail-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.Detail-stackItem {
+  background: var(--site-surface);
+  border: 0.1rem solid var(--site-border);
+  border-radius: 0.25rem;
+  color: var(--site-ink);
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+}
+
+.Detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.Detail-back {
+  display: inline-block;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+  text-decoration: none;
+}
+
+@media (max-width: 32rem) {
+  .CardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .Card-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 }

@@ -4,41 +4,61 @@
       <h1>Kian Hong Tan</h1>
       {{ .Content }}
     </div>
-    <div class="Home-portrait">
-      {{ with resources.Get "images/profile/kian-hong-tan.jpg" }}
-        {{ $portrait := .Fill "720x900 Center" }}
-        <img src="{{ $portrait.RelPermalink }}" alt="Portrait of Kian Hong Tan" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}">
-      {{ else }}
-        <div class="Home-portraitPlaceholder" role="img" aria-label="Portrait of Kian Hong Tan will appear here">
-          <span>Portrait forthcoming</span>
-        </div>
-      {{ end }}
-    </div>
+    <figure class="Home-portrait">
+      <div class="Home-portraitMedia">
+        {{ with resources.Get "images/profile/kian-hong-tan.jpg" }}
+          {{ $portrait := .Fill "720x900 Center" }}
+          <img src="{{ $portrait.RelPermalink }}" alt="Portrait of Kian Hong Tan" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}">
+        {{ else }}
+          <div class="Home-portraitPlaceholder" role="img" aria-label="Portrait of Kian Hong Tan will appear here">
+            <span>Picture of me here</span>
+          </div>
+        {{ end }}
+      </div>
+      <figcaption>Yosemite National Park, May 2026</figcaption>
+    </figure>
   </article>
 
+  {{ $projectPages := where site.RegularPages "Section" "projects" }}
+  {{ $featured := where $projectPages ".Params.featured" true }}
+  {{ $latest := first 3 (sort $projectPages "Date" "desc") }}
+  {{ $displayed := $featured | first 3 }}
+  {{ if eq (len $displayed) 0 }}
+    {{ $displayed = $latest }}
+  {{ end }}
   <section class="Home-section" aria-labelledby="projects-heading">
-    <h2 id="projects-heading">Projects</h2>
-    <div class="Home-grid">
-      <article class="Home-card Home-card--placeholder">
-        <strong>Project one</strong>
-        <span>Project case study coming soon.</span>
-      </article>
-      <article class="Home-card Home-card--placeholder">
-        <strong>Project two</strong>
-        <span>Project case study coming soon.</span>
-      </article>
-      <article class="Home-card Home-card--placeholder">
-        <strong>Project three</strong>
-        <span>Project case study coming soon.</span>
-      </article>
+    <div class="Home-sectionHeading">
+      <h2 id="projects-heading">Projects</h2>
+      <a href="{{ relref . "/projects" }}">All projects</a>
     </div>
+    {{ with $displayed }}
+      <ul class="CardGrid">
+        {{ range . }}
+          <li>
+            <article class="Card">
+              <a class="Card-link" href="{{ .RelPermalink }}">
+                <header class="Card-header">
+                  <h3 class="Card-title">{{ .Title }}</h3>
+                  <span class="Card-meta">{{ .Params.period | default "" }}</span>
+                </header>
+                {{ with .Description }}
+                  <p class="Card-description">{{ . }}</p>
+                {{ end }}
+              </a>
+            </article>
+          </li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <p>Projects are coming soon.</p>
+    {{ end }}
   </section>
 
-  {{ $writing := where site.RegularPages "Section" "writing" }}
+  {{ $writing := where site.RegularPages "Section" "blog" }}
   <section class="Home-section" aria-labelledby="writing-heading">
     <div class="Home-sectionHeading">
       <h2 id="writing-heading">Latest writing</h2>
-      <a href="{{ relref . "/writing" }}">All writing</a>
+      <a href="{{ relref . "/blog" }}">All writing</a>
     </div>
     {{ with first 3 $writing }}
       <ul class="Home-list">

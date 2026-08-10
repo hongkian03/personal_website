@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+  <article>
+    <header class="Detail-header">
+      {{ $context := dict "page" . "level" 1 "isdateshown" true }}
+      {{ partial "heading.html" $context }}
+    </header>
+
+    {{ .Content }}
+
+    <a class="Detail-back" href="{{ relref . "/blog" }}">All posts</a>
+  </article>
+
+{{ end }}

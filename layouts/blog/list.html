@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+  {{ $context := dict "page" . "level" 1 "isdateshown" false }}
+  {{ partial "heading.html" $context }}
+
+  {{ with .Content }}
+    <div class="Page-intro">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{ $posts := where .Pages "Kind" "page" }}
+  {{ $posts = $posts | first 50 }}
+
+  {{ with $posts }}
+    <ul class="CardGrid">
+      {{ range . }}
+        <li>
+          <article class="Card">
+            <a class="Card-link" href="{{ .RelPermalink }}">
+              <header class="Card-header">
+                <h2 class="Card-title">{{ .Title }}</h2>
+                <span class="Card-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+              </header>
+              {{ with .Description }}
+                <p class="Card-description">{{ . }}</p>
+              {{ end }}
+            </a>
+          </article>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>Posts are coming soon.</p>
+  {{ end }}
+
+{{ end }}

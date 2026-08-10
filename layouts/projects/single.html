@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+  <article>
+    <header class="Detail-header">
+      {{ $context := dict "page" . "level" 1 "isdateshown" false }}
+      {{ partial "heading.html" $context }}
+    </header>
+
+    <ul class="Detail-facts">
+      {{ with .Params.period }}
+        <li class="Detail-fact">
+          <p class="Detail-factLabel">Period</p>
+          <p class="Detail-factValue">{{ . }}</p>
+        </li>
+      {{ end }}
+      {{ with .Params.status }}
+        <li class="Detail-fact">
+          <p class="Detail-factLabel">Status</p>
+          <p class="Detail-factValue">{{ . }}</p>
+        </li>
+      {{ end }}
+      {{ with .Params.role }}
+        <li class="Detail-fact">
+          <p class="Detail-factLabel">Role</p>
+          <p class="Detail-factValue">{{ . }}</p>
+        </li>
+      {{ end }}
+    </ul>
+
+    {{ with .Params.stack }}
+      <section class="Detail-section">
+        <h2>Tech Stack</h2>
+        <ul class="Detail-stack">
+          {{ range . }}
+            <li class="Detail-stackItem">{{ . }}</li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+
+    {{ .Content }}
+
+    {{ with .Params.links }}
+      <section class="Detail-section">
+        <h2>Links</h2>
+        <ul class="Detail-links">
+          {{ range . }}
+            <li><a href="{{ .url }}" rel="noopener">{{ .label | default .url }}</a></li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+
+    <a class="Detail-back" href="{{ relref . "/projects" }}">← All projects</a>
+  </article>
+
+{{ end }}

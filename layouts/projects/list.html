@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+  {{ $context := dict "page" . "level" 1 "isdateshown" false }}
+  {{ partial "heading.html" $context }}
+
+  {{ with .Content }}
+    <div class="Page-intro">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{ $projects := where .Pages "Kind" "page" }}
+  {{ $projects = $projects | first 50 }}
+
+  {{ $categories := slice "Software Engineering" "Machine Learning" "Data Analytics" }}
+
+  {{ if $projects }}
+    {{ range $categories }}
+      {{ $catName := . }}
+      {{ $catProjects := where $projects ".Params.category" $catName }}
+      {{ $catProjects = sort $catProjects "Date" "desc" }}
+      {{ with $catProjects }}
+        <section class="Category-section" aria-labelledby="category-{{ $catName | urlize }}">
+          <h2 class="Category-heading" id="category-{{ $catName | urlize }}">{{ $catName }}</h2>
+          <ul class="CardGrid">
+            {{ range $catProjects }}
+              <li>
+                <article class="Card">
+                  <a class="Card-link" href="{{ .RelPermalink }}">
+                    <header class="Card-header">
+                      <h3 class="Card-title">{{ .Title }}</h3>
+                      <span class="Card-meta">{{ .Params.period | default "" }}</span>
+                    </header>
+                    {{ with .Description }}
+                      <p class="Card-description">{{ . }}</p>
+                    {{ end }}
+                  </a>
+                </article>
+              </li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    <p>Projects are coming soon.</p>
+  {{ end }}
+
+{{ end }}

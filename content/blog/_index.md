@@ -1,5 +1,5 @@
 ---
-title: Writing
+title: Blog
 description: "Opinion pieces, technical reflections, and notes."
 ---
 

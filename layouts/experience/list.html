@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+  {{ $context := dict "page" . "level" 1 "isdateshown" false }}
+  {{ partial "heading.html" $context }}
+
+  {{ with .Content }}
+    <div class="Page-intro">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{ $entries := where .Pages "Kind" "page" }}
+  {{ $entries = $entries | first 50 }}
+
+  {{ $categories := slice "Work Experience" "Leadership & Activities" }}
+
+  {{ if $entries }}
+    {{ range $categories }}
+      {{ $catName := . }}
+      {{ $catEntries := where $entries ".Params.category" $catName }}
+      {{ $catEntries = sort $catEntries "Date" "desc" }}
+      {{ with $catEntries }}
+        <section class="Category-section" aria-labelledby="category-{{ $catName | urlize }}">
+          <h2 class="Category-heading" id="category-{{ $catName | urlize }}">{{ $catName }}</h2>
+          <ul class="CardGrid">
+            {{ range $catEntries }}
+              <li>
+                <article class="Card">
+                  <a class="Card-link" href="{{ .RelPermalink }}">
+                    <header class="Card-header">
+                      <h3 class="Card-title">{{ .Title }}</h3>
+                      <span class="Card-meta">{{ .Params.period | default "" }}</span>
+                    </header>
+                    {{ with .Description }}
+                      <p class="Card-description">{{ . }}</p>
+                    {{ end }}
+                  </a>
+                </article>
+              </li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    <p>Experience entries are coming soon.</p>
+  {{ end }}
+
+{{ end }}

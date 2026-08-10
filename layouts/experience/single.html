@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+  <article>
+    <header class="Detail-header">
+      {{ $context := dict "page" . "level" 1 "isdateshown" false }}
+      {{ partial "heading.html" $context }}
+    </header>
+
+    {{ with .Params.summary }}
+      <p class="Card-description">{{ . }}</p>
+    {{ end }}
+
+    <ul class="Detail-facts">
+      {{ with .Params.period }}
+        <li class="Detail-fact">
+          <p class="Detail-factLabel">Period</p>
+          <p class="Detail-factValue">{{ . }}</p>
+        </li>
+      {{ end }}
+      {{ with .Params.organization }}
+        <li class="Detail-fact">
+          <p class="Detail-factLabel">Organization</p>
+          <p class="Detail-factValue">{{ . }}</p>
+        </li>
+      {{ end }}
+      {{ with .Params.role }}
+        <li class="Detail-fact">
+          <p class="Detail-factLabel">Role</p>
+          <p class="Detail-factValue">{{ . }}</p>
+        </li>
+      {{ end }}
+      {{ with .Params.location }}
+        <li class="Detail-fact">
+          <p class="Detail-factLabel">Location</p>
+          <p class="Detail-factValue">{{ . }}</p>
+        </li>
+      {{ end }}
+    </ul>
+
+    {{ with .Params.highlights }}
+      <section class="Detail-section">
+        <h2>Highlights</h2>
+        <ul>
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+
+    {{ .Content }}
+
+    <a class="Detail-back" href="{{ relref . "/experience" }}">← All experience</a>
+  </article>
+
+{{ end }}

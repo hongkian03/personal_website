@@ -9,7 +9,7 @@ params:
   width: 48rem
   divider: "\\2500\\2500"
   footer: "© Kian Hong Tan. Built with Hugo."
-  rss: "Subscribe to new writing with your preferred feed reader."
+  rss: "Subscribe to new blog posts with your preferred feed reader."
   favicon: false
   noClasses: false
   headingoffset: 0
@@ -19,7 +19,7 @@ params:
   opengraph: false
   twittercards: false
   mainSections:
-    - writing
+    - blog
   css:
     - css/site.css
 
@@ -34,8 +34,8 @@ menu:
     - name: Experience
       pageRef: /experience
       weight: 3
-    - name: Writing
-      pageRef: /writing
+    - name: Blog
+      pageRef: /blog
       weight: 4
     - name: RSS
       pageRef: /
@@ -43,8 +43,7 @@ menu:
       params:
         format: rss
 
-taxonomies:
-  tag: tags
+taxonomies: {}
 
 outputFormats:
   rss:

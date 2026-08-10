@@ -1,8 +1,8 @@
 ---
 title: ""
-description: "Developer, researcher-in-training, and writer."
+description: "Home page. Landing Page."
 ---
 
-Developer, researcher-in-training, and writer. This is a home for selected work, previous experiences, and ideas explored in public.
+I like software engineering. I also like machine learning. I also like data science and statistics.
 
-I care about thoughtful software, careful questions, and communicating clearly about the things I learn along the way.
+This website serves as home for my professional profile, personal projects, and my very best attempt at documenting my various thoughts on various things.
