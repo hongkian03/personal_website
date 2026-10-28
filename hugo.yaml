@@ -1,7 +1,8 @@
-baseURL: https://example.github.io/
+baseURL: https://hongkian03.github.io/personal_website/
 title: Kian Hong Tan
 languageCode: en-US
 theme: hugo-flex
+enableRobotsTXT: true
 
 params:
   description: "Developer, researcher-in-training, and writer."
@@ -16,8 +17,8 @@ params:
   linkicons: hover
   summaries: true
   schema: false
-  opengraph: false
-  twittercards: false
+  opengraph: true
+  twittercards: true
   mainSections:
     - blog
   css:

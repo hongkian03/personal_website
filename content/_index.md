@@ -1,6 +1,6 @@
 ---
 title: ""
-description: "Home page. Landing Page."
+description: "Kian Hong Tan's professional profile, personal projects, and writing."
 ---
 
 I like software engineering. I also like machine learning. I also like data science and statistics.
