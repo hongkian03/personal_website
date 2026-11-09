@@ -6,7 +6,9 @@
       {{ partial "heading.html" $context }}
     </header>
 
-    {{ .Content }}
+    <div class="Prose">
+      {{ .Content }}
+    </div>
 
     <a class="Detail-back" href="{{ relref . "/blog" }}">All posts</a>
   </article>

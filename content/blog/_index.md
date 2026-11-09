@@ -3,4 +3,4 @@ title: Blog
 description: "Opinion pieces, technical reflections, and notes."
 ---
 
-Essays and notes about technology, research, and ideas worth thinking through in public.
+Essays and notes about my interests and ideas worth thinking through in public.

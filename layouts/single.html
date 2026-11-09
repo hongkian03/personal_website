@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+  {{ $context := dict "page" . "level" 1 "isdateshown" true }}
+  {{ partial "heading.html" $context }}
+  <div class="Prose">
+    {{ .Content }}
+  </div>
+  {{ partial "tags.html" . }}
+  {{ partial "comments.html" . }}
+
+{{ end }}

@@ -415,3 +415,12 @@
     gap: 0.25rem;
   }
 }
+
+/* Justify prose only; headings, lists, captions, and metadata keep their alignment. */
+.Prose > p,
+.Prose > blockquote > p,
+.Page-intro > p {
+  text-align: justify;
+  text-align-last: start;
+  hyphens: auto;
+}
